@@ -2,21 +2,41 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.bar{
+  width: 100vw;
+  height: 8vh;
+   border: 5px solid red;
+}
+.d1{
+  width: 100vw;
+  height: 30vh;
+   border: 5px solid red;
+}
+.recap{
+  width: 100vw;
+  height: 24vh;
+  border: 5px solid red;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.actions{
+  display: flex ; 
+  flex-direction: row ;
+  width: 100vw;
+  height: 30vh;
+  border: 5px solid gold;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ /* padding: 2.5% ; */
+ /* align-content: space-between ;  */
+}
+.action{
+  background-color: #f1f1f1;
+  margin-left: 10px;
+  text-align: center;
+  width: 30%; 
 }
 
-.App-link {
-  color: #09d3ac;
+.camorshal{
+  width: 100vw;
+  height: 8vh;
+  border: 1px solid red;
 }
