@@ -1,21 +1,23 @@
 .App {
   text-align: center;
+  height: 100%;
+  margin: 0px ; 
 }
 
 .bar{
   width: 100vw;
   height: 8vh;
-   border: 5px solid red;
+   /* border: 5px solid red; */
 }
 .d1{
   width: 100vw;
   height: 30vh;
-   border: 5px solid red;
+   /* border: 5px solid red; */
 }
 .recap{
   width: 100vw;
   height: 24vh;
-  border: 5px solid red;
+  /* border: 5px solid red; */
 }
 
 .actions{
@@ -23,7 +25,7 @@
   flex-direction: row ;
   width: 100vw;
   height: 30vh;
-  border: 5px solid gold;
+  /* border: 5px solid gold; */
   justify-content: center;
  /* padding: 2.5% ; */
  /* align-content: space-between ;  */
@@ -38,5 +40,5 @@
 .camorshal{
   width: 100vw;
   height: 8vh;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }

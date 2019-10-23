@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Evaluate extends Component {
+export default class Diet extends Component {
    constructor() {
        super()
        this.state = {
@@ -15,7 +15,10 @@ export default class Evaluate extends Component {
    render() {
        return(
         <div className='container'>
-            Evaluate
+            <div
+            >
+                diet name
+            </div>
        </div>
         ) }
 }
