@@ -26,10 +26,9 @@ export default function Bmi() {
   const [bmi, setBmi] = useState(JSON.parse(localStorage.getItem("human")));
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <p> {JSON.stringify(bmi.bmi)} </p>
-      <p> {JSON.stringify(bmi.condition)} </p>
-      <p> {defs[bmi.condition]} </p>
+      <p> bmi :  {JSON.stringify(bmi.bmi)} </p>
+      <p> def :  {JSON.stringify(bmi.condition)} </p>
+      <p> mining :  {defs[bmi.condition]} </p>
       <button onClick={() => setCount(count + 2)}>Click me</button>
     </div>
   );

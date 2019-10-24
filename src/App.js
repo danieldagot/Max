@@ -31,14 +31,12 @@ function App() {
       
       <div className="App">
         {localStorage.getItem("human")}
-      <Route path="/" exact render={() => <Bmi />} />
+      {/* <Route path="/" exact render={() => <Bmi />} /> */}
       
     
         <div className=" camorshal" >
         <ButtonToolbar>
-      <Button onClick={() => setLgShow(true)}>Large modal</Button>
-
-  
+      <Button onClick={() => setLgShow(true)}>Bmi</Button>
       <Modal
         size="lg"
         show={lgShow}
