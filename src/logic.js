@@ -84,7 +84,7 @@ export default class  Logic {
 
     }
 
-    constructor(height = 0 , weight = 0 , age = 0 , sex  = " male" , activity = 1 ) {
+    constructor(height = 0 , weight = 0 , age = 0 , sex  = "male" , activity = 1 ) {
 
         this.height = height
         this.weight = weight
@@ -95,3 +95,4 @@ export default class  Logic {
         this.recomandetCal = this.get_recomandet_dcal(weight, height, this.bmi, 24, this.cal)
     }
 }
+
