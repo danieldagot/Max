@@ -15,8 +15,7 @@ export default class Diet extends Component {
    render() {
        return(
         <div className='container'>
-            <div
-            >
+            <div>
                 diet name
             </div>
        </div>

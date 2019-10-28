@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Logic from "../../logic"  
+
 // export default class Bmi extends Component {
 //     constructor() {
 //         super()
@@ -29,6 +31,7 @@ export default function Bmi() {
   const [bmi, setBmi] = useState(JSON.parse(localStorage.getItem("human")));
   return (
     <div>
+     
       <p> bmi :  {JSON.stringify(bmi.bmi)} </p>
       <p> def :  {JSON.stringify(bmi.condition)} </p>
       <p> mining :  {defs[bmi.condition]} </p>

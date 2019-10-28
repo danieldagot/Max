@@ -9,24 +9,25 @@ import Diet from "./Components/Diet"
 import Main from "./Components/Main"
 import Bmi from "./Components/popups/bmi"
 import Bmr from "./Components/popups/bmr"
-
 import Logic from "./logic"
+
+
+
 let human = {
-  hight: 180,
-  weight: 800,
+  hight: 190,
+  weight: 150,
   age: 18,
   sex: "male",
   activity: 1
 }
-
 let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
 localStorage.setItem("human", JSON.stringify(L))
+
 function App() {
   console.log(L);
   const [ShowBmr, setShowBmr] = useState(false);
   const [ShowBmi, setShowBmi] = useState(false);
   return (
-
     <Router>
       <div className="App">
         {localStorage.getItem("human")}
@@ -65,9 +66,7 @@ function App() {
           </ButtonToolbar>
         </div>
       </div>
-
     </Router>
   );
 }
-
 export default App;
