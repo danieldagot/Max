@@ -15,18 +15,21 @@ import Logic from "./logic"
 
 let human = {
   hight: 190,
-  weight: 150,
+  weight: 80,
   age: 18,
   sex: "male",
   activity: 1
 }
 let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
+
 localStorage.setItem("human", JSON.stringify(L))
+
 
 function App() {
   console.log(L);
   const [ShowBmr, setShowBmr] = useState(false);
   const [ShowBmi, setShowBmi] = useState(false);
+  const [human2, sethuman] = useState(JSON.parse(localStorage.getItem("human")));
   return (
     <Router>
       <div className="App">
@@ -34,8 +37,8 @@ function App() {
         {/* <Route path="/" exact render={() => <Bmi />} /> */}
         <div className=" camorshal" >
           <ButtonToolbar>
-            <Button onClick={() => setShowBmi(!ShowBmi)}>Bmi</Button>
-            <Button onClick={() => setShowBmr(true)}>Bmr</Button>
+            <button onClick={() => setShowBmi(!ShowBmi)}>  bmi :  {human2.bmi}  </button>
+            <button onClick={() => setShowBmr(true)}> bmr :  {human2.bmr} clalirs a dey  </button>
             <Modal
               size="lg"
               show={ShowBmi}

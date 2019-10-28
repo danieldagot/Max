@@ -83,7 +83,10 @@ export default class  Logic {
         }
 
     }
-
+    get_whater(weight , activity )
+    {
+    return (weight / 30 ) + (0.125 * activity )
+    }
     constructor(height = 0 , weight = 0 , age = 0 , sex  = "male" , activity = 1 ) {
 
         this.height = height
@@ -93,7 +96,7 @@ export default class  Logic {
         this.cal = this.get_cal(this.bmr, activity)
         this.condition = this.get_bmi_standart(this.bmi)
         this.recomandetCal = this.get_recomandet_dcal(weight, height, this.bmi, 24, this.cal)
-        
+        this.water = this.get_whater(weight, activity)
     }
 }
 
