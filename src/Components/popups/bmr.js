@@ -31,6 +31,10 @@ export default function Bmr() {
         console.log(L);
         sethuman(L)
     }
+    let save = function ()
+    {
+        localStorage.setItem("human", JSON.stringify(human))
+    }
 
     return (
         <div>
@@ -39,7 +43,7 @@ export default function Bmr() {
             <p> recomandetCal :  {JSON.stringify(human.recomandetCal)} </p>
             <input type="number" defaultValue={human.weight} onChange={event => changeHumanWhit(event.target.value)}></input>
             <input type="number" defaultValue={human.height} onChange={event => changeHumanHight(event.target.value)}></input>
-            <p> {count} </p>
+           <button onClick ={save} > save! </button>
         </div>
     );
 }
