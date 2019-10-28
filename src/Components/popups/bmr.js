@@ -24,7 +24,7 @@ export default function Bmr() {
     let changeHumanHight = function (num) {
         let h = human
         console.log(h);
-        h.weight = parseInt(num)
+        h.height = parseInt(num)
         console.log(h);
         //let L = new Logic(human.height, human.weight, human.age, human.sex, human.activity)
         let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity)
@@ -37,8 +37,8 @@ export default function Bmr() {
             <p> bmr :  {JSON.stringify(human)} </p>
             <p> bmr :  {JSON.stringify(human.cal)} </p>
             <p> recomandetCal :  {JSON.stringify(human.recomandetCal)} </p>
-            <input type="number" defaultValue={count} onChange={event => changeHumanWhit(event.target.value)}></input>
-            {/* {JSON.stringify( new Logic(human))} */}
+            <input type="number" defaultValue={human.weight} onChange={event => changeHumanWhit(event.target.value)}></input>
+            <input type="number" defaultValue={human.height} onChange={event => changeHumanHight(event.target.value)}></input>
             <p> {count} </p>
         </div>
     );

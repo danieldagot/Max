@@ -29,13 +29,37 @@ export default function Bmi() {
   // Declare a new state variable, which we'll call "count"
   const [count, setCount] = useState(0);
   const [bmi, setBmi] = useState(JSON.parse(localStorage.getItem("human")));
+  const [human, sethuman] = useState(JSON.parse(localStorage.getItem("human")));
+
+  let changeHumanWhit = function (num) {
+    let h = human
+    console.log(h);
+    h.weight = parseInt(num)
+    console.log(h);
+    //let L = new Logic(human.height, human.weight, human.age, human.sex, human.activity)
+    let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity)
+    console.log(L);
+    sethuman(L)
+}
+let changeHumanHight = function (num) {
+    let h = human
+    console.log(h);
+    h.height = parseInt(num)
+    console.log(h);
+    //let L = new Logic(human.height, human.weight, human.age, human.sex, human.activity)
+    let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity)
+    console.log(L);
+    sethuman(L)
+}
   return (
     <div>
      
-      <p> bmi :  {JSON.stringify(bmi.bmi)} </p>
-      <p> def :  {JSON.stringify(bmi.condition)} </p>
-      <p> mining :  {defs[bmi.condition]} </p>
+      <p> bmi :  {JSON.stringify(human.bmi)} </p>
+      <p> def :  {JSON.stringify(human.condition)} </p>
+      <p> mining :  {defs[human.condition]} </p>
       <button onClick={() => setCount(count + 2)}>Click me</button>
+      <input type="number" defaultValue={human.weight} onChange={event => changeHumanWhit(event.target.value)}></input>
+            <input type="number" defaultValue={human.height} onChange={event => changeHumanHight(event.target.value)}></input>
     </div>
   );
 }
