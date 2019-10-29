@@ -87,6 +87,19 @@ export default class  Logic {
     {
     return (weight / 30 ) + (0.125 * activity )
     }
+
+
+    get_cal_spit(carbs = 40  , protin = 30, fat  = 30 , caloris )
+    {
+
+           let cal4C= carb /100
+           let cak4P = protin /100 
+           let cal9 = fat / 100 
+          let split
+          return carbs   
+
+    }
+
     constructor(height = 0 , weight = 0 , age = 0 , sex  = "male" , activity = 1 ) {
 
         this.height = height

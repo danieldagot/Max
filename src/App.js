@@ -14,12 +14,13 @@ import Logic from "./logic"
 
 
 let human = {
-  hight: 190,
-  weight: 80,
+  hight: 156,
+  weight: 58,
   age: 18,
-  sex: "male",
-  activity: 1
+  sex: "female",
+  activity: 2
 }
+
 let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
 
 localStorage.setItem("human", JSON.stringify(L))
