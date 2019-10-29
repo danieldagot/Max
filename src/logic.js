@@ -92,11 +92,20 @@ export default class  Logic {
     get_cal_spit(carbs = 40  , protin = 30, fat  = 30 , caloris )
     {
 
-           let cal4C= carb /100
+           let cal4C= carbs /100
            let cak4P = protin /100 
            let cal9 = fat / 100 
-          let split
-          return carbs   
+            console.log(caloris);
+            
+            let split = {
+                carbs :  (cal4C * caloris  )  /4,
+                protin : (cak4P *  caloris )  /4 ,
+                fat : (cal9 * caloris )   /9 
+
+            }
+            console.log(split );
+            
+          return   split 
 
     }
 
@@ -110,6 +119,7 @@ export default class  Logic {
         this.condition = this.get_bmi_standart(this.bmi)
         this.recomandetCal = this.get_recomandet_dcal(weight, height, this.bmi, 24, this.cal)
         this.water = this.get_whater(weight, activity)
+        this.split = this.get_cal_spit(40,30,30,this.recomandetCal)
     }
 }
 
