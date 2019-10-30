@@ -20,9 +20,9 @@ let human = {
   activity: 3
 }
 
-// let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
+let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
 
-// localStorage.setItem("human", JSON.stringify(L))
+localStorage.setItem("human", JSON.stringify(L))
 
 
 function App() {
