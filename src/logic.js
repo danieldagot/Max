@@ -96,9 +96,9 @@ export default class Logic {
         console.log(caloris);
 
         let split = {
-            carbs: (cal4C * caloris) / 4,
-            protin: (cak4P * caloris) / 4,
-            fat: (cal9 * caloris) / 9
+            carbs:  Math.round( (cal4C * caloris) / 4 ) ,
+            protin: Math.round( (cak4P * caloris) / 4 ) ,
+            fat:  Math.round( (cal9 * caloris) / 9 )
 
         }
         console.log(split);
