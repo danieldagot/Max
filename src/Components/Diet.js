@@ -1,23 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component,useState } from 'react'; 
+import Requests from "../requests"
 
-export default class Diet extends Component {
-   constructor() {
-       super()
-       this.state = {
-           User: "",
-           Age: 0,
-           Country: "",
-           Gender: "",
-           interested: [],
-           finishedDetails: 0
-       }
-   }
-   render() {
+export default function Diet() {
+
        return(
         <div className='container'>
             <div>
                 diet name
             </div>
        </div>
-        ) }
+        ) 
 }

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <style>
+        .topbar{ /* used for the main hamburger menu bar */
+            z-index: 1;
+            height: 8%;
+            min-height: 8%;
+            width: 100%;
+            background-color: #626567;
+            padding:2.5%;
+            position: fixed;
+            top:2.5%;                                                                               /*needs to sit below the time div*/
+        }
+        .adbar{ /* used for the ad */
+            z-index: 1;
+            height: 8%;
+            min-height: 8%;
+            width: 100%;
+            background-color: #626567;
+            padding:2.5%;
+            position: fixed;
+            top:10.5%;                                                                           /*needs to sit below the topbar div*/
+        }
+        .sumcat{ /* only shows on the main page to track progress */
+            height: 20%;
+            min-height: 20%;
+            background-color:#797D7F;
+            padding:2.5%;
+        }
+        .maincat{ /* dark brown catogories to summorize your experience */
+            height: 8%;
+            min-height: 8%;
+            background-color:#797D7F;
+            padding:2.5%;
+        }
+        .insidecat{ /* details about the info on the main categories */
+            height: 8%;
+            min-height: 8%;
+            background-color: #909497;
+            border-bottom: 1px solid black;
+            padding:2.5%;
+        }
+        .minicat{ /* details on the info in the inside categories */
+            height: 8%;
+            min-height: 8%;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+            background-color:#A6ACAF;
+            border-bottom: 1px solid black;
+            padding:2.5%;
+        }
+        .bottommenu{ /* categories bottom menu */
+            z-index: 1;
+            height: 8%;
+            min-height: 8%;
+            width: 100%;
+            background-color: #909497;
+            border-bottom: 1px solid black;
+            position: fixed;
+            bottom:5.5%;                                                                      /*needs to sit above the home button div*/
+            display: flex;
+        }
+        .bottommenu  div{ /* individual categories bottom menu */
+            width: 25%;
+            min-width: 25%;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            text-align: center;
+            position: relative;
+        }
+        .selectedcat{ /* currently selected tab*/
+            color: white;
+            background-color: black;
+        }
+        .noselectedcat{ /* currently not selected tab*/
+            color: black;
+            background-color: white;
+        }
+
+        body, html{
+            padding:0px;
+            margin: 0px;
+            height: 100%;
+            min-height: 100%;
+            font-size: 10;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div style="height: 2.5%; background-color: red;position: fixed; top:0; width: 100%;">TIME</div>
+
+    <div class="topbar"> logo and hamburger go here </div>
+    <div class="adbar">AD GOES HERE</div>
+
+    <div style="height: 100%;padding-top:18.5vh;">
+        <div class="maincat">Hey vlad! you need 1 more training today</div>
+        <div class="insidecat">training 1</div>
+        <div class="minicat">5 situps</div>
+        <div class="minicat">5 pushups</div>
+        <div class="minicat">5km jog</div>
+        <div class="insidecat">training 2</div>
+        <div class="insidecat">meal 1</div>
+        <div class="minicat">BEANS NIGGA</div>
+        <div class="insidecat">training 1</div>
+        <div class="minicat">5 situps</div>
+        <div class="minicat">5 pushups</div>
+        <div class="minicat">5km jog</div>
+        <div class="insidecat">training 2</div>
+        <div class="insidecat">meal 1</div>
+        <div class="minicat">BEANS NIGGA</div>
+    </div>
+
+    <div class="bottommenu">
+        <div class="selectedcat">Daily Progress</div>
+        <div class="noselectedcat">Imun</div>
+        <div class="noselectedcat">Diet</div>
+        <div class="noselectedcat">Data center</div>
+    </div>
+
+    <div style="height: 5.5%; background-color: red; position: fixed; bottom:0;width: 100%;">Home button</div>
+</body>
+
+</html>

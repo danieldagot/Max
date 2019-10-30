@@ -1,44 +1,27 @@
-.App {
-  text-align: center;
+body, html{
+  padding:0px;
+  margin: 0px;
   height: 100%;
-  margin: 0px ; 
+  min-height: 100%;
+  font-size: 10;
 }
+.App { 
+ text-align: center; 
+ /* height: 100vh;  */
+ margin: 0px; 
+ /* height: 100%; 
+ min-height: 100%;  */
+ } 
 
-.bar{
-  width: 100vw;
-  height: 8vh;
-   /* border: 5px solid red; */
-}
-.d1{
-  width: 100vw;
-  height: 30vh;
-   /* border: 5px solid red; */
-}
-.recap{
-  width: 100vw;
-  height: 24vh;
-  /* border: 5px solid red; */
-}
-
-.actions{
-  display: flex ; 
-  flex-direction: row ;
-  width: 100vw;
-  height: 30vh;
-  /* border: 5px solid gold; */
-  justify-content: center;
- /* padding: 2.5% ; */
- /* align-content: space-between ;  */
-}
-.action{
-  background-color: #f1f1f1;
-  margin-left: 10px;
-  text-align: center;
-  width: 30%; 
-}
-
-.camorshal{
-  width: 100vw;
-  height: 8vh;
-  /* border: 1px solid red; */
-}
+.time { 
+ height: 2.5%; background-color: red; 
+ top:0; 
+ width: 100%; 
+ } 
+ .homeButton { 
+ height: 5.5%; 
+ background-color: red; 
+ width: 100%; 
+ bottom: 0; 
+ position: fixed; 
+ } 

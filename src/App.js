@@ -11,84 +11,31 @@ import Bmi from "./Components/popups/bmi"
 import Bmr from "./Components/popups/bmr"
 import Split from "./Components/popups/split"
 import Logic from "./logic"
+import Requests from "./requests"
+
 
 let human = {
+  name : "byber", 
   hight: 156,
   weight: 58,
   age: 18,
   sex: "female",
   activity: 3
+
 }
 
 let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
-
+let req = new Requests()
 localStorage.setItem("human", JSON.stringify(L))
-
-
 function App() {
-  const [ShowBmr, setShowBmr] = useState(false);
-  const [ShowBmi, setShowBmi] = useState(false);
-  const [ShowSplit, setShowSplit] = useState(false);
-  const [human2, sethuman] = useState(JSON.parse(localStorage.getItem("human")));
-  console.log(human2);
+  req.food("egg")
   return (
-    
-    
     <Router>
-      
       <div className="App">
+      <div class = "time" >TIME</div>
         {localStorage.getItem("human")}
-        {/* <Route path="/" exact render={() => <Bmi />} /> */}
-        <div className=" camorshal" >
-          <ButtonToolbar>
-            <button onClick={() => setShowBmi(!ShowBmi)}> bmi :  {human2.bmi}  </button>
-            <button onClick={() => setShowBmr(!ShowBmr)}> bmr :  {human2.bmr} clalirs a dey  </button>
-            <button onClick={() => setShowSplit(!ShowSplit)}>  {JSON.stringify(human2.diet_spit)}  </button>
-            <Modal
-              size="lg"
-              show={ShowBmi}
-              onHide={() => setShowBmi(false)}
-              aria-labelledby="example-modal-sizes-title-lg"
-            >
-              <Modal.Header closeButton>
-                <Modal.Title id="example-modal-sizes-title-lg">
-                  Bmi
-          </Modal.Title>
-              </Modal.Header>
-              <Modal.Body> <Bmi /> </Modal.Body>
-            </Modal>
-
-            <Modal
-              size="lg"
-              show={ShowBmr}
-              onHide={() => setShowBmr(false)}
-              aria-labelledby="example-modal-sizes-title-lg"
-            >
-              <Modal.Header closeButton>
-                <Modal.Title id="example-modal-sizes-title-lg">
-                  Bmr
-          </Modal.Title>
-              </Modal.Header>
-              <Modal.Body> <Bmr /> </Modal.Body>
-            </Modal>
-
-
-            <Modal
-              size="lg"
-              show={ShowSplit}
-              onHide={() => setShowSplit(false)}
-              aria-labelledby="example-modal-sizes-title-lg"
-            >
-              <Modal.Header closeButton>
-                <Modal.Title id="example-modal-sizes-title-lg">
-                  Bmi
-          </Modal.Title>
-              </Modal.Header>
-              <Modal.Body> <Split /> </Modal.Body>
-            </Modal>
-
-          </ButtonToolbar>
-        </div>
+        <Route path="/" exact render={() => <Main />} />
+        <div className = "homeButton">Home button</div>
       </div>
     </Router>
   );
