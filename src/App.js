@@ -9,16 +9,15 @@ import Diet from "./Components/Diet"
 import Main from "./Components/Main"
 import Bmi from "./Components/popups/bmi"
 import Bmr from "./Components/popups/bmr"
+import Split from "./Components/popups/split"
 import Logic from "./logic"
-
-
 
 let human = {
   hight: 156,
   weight: 58,
   age: 18,
   sex: "female",
-  activity: 2
+  activity: 3
 }
 
 let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
@@ -30,16 +29,19 @@ function App() {
   console.log(L);
   const [ShowBmr, setShowBmr] = useState(false);
   const [ShowBmi, setShowBmi] = useState(false);
+  const [ShowSplit, setShowSplit] = useState(false);
   const [human2, sethuman] = useState(JSON.parse(localStorage.getItem("human")));
   return (
     <Router>
+      
       <div className="App">
         {localStorage.getItem("human")}
         {/* <Route path="/" exact render={() => <Bmi />} /> */}
         <div className=" camorshal" >
           <ButtonToolbar>
-            <button onClick={() => setShowBmi(!ShowBmi)}>  bmi :  {human2.bmi}  </button>
-            <button onClick={() => setShowBmr(true)}> bmr :  {human2.bmr} clalirs a dey  </button>
+            <button onClick={() => setShowBmi(!ShowBmi)}> bmi :  {human2.bmi}  </button>
+            <button onClick={() => setShowBmr(!ShowBmr)}> bmr :  {human2.bmr} clalirs a dey  </button>
+            <button onClick={() => setShowSplit(!ShowSplit)}>  {JSON.stringify(human2.split)}  </button>
             <Modal
               size="lg"
               show={ShowBmi}
@@ -67,6 +69,22 @@ function App() {
               </Modal.Header>
               <Modal.Body> <Bmr /> </Modal.Body>
             </Modal>
+
+
+            <Modal
+              size="lg"
+              show={ShowSplit}
+              onHide={() => setShowSplit(false)}
+              aria-labelledby="example-modal-sizes-title-lg"
+            >
+              <Modal.Header closeButton>
+                <Modal.Title id="example-modal-sizes-title-lg">
+                  Bmi
+          </Modal.Title>
+              </Modal.Header>
+              <Modal.Body> <Split /> </Modal.Body>
+            </Modal>
+
           </ButtonToolbar>
         </div>
       </div>

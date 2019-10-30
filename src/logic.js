@@ -1,5 +1,5 @@
 
-export default class  Logic {
+export default class Logic {
 
     get_bmi(height, weight) {
         let Mhight = height / 100
@@ -73,7 +73,7 @@ export default class  Logic {
         if (22 - bmi >= 0) {
             let r = cal + (tcg / 7)
             console.log(r);
-            
+
             return Math.round(r)
         }
         else {
@@ -83,43 +83,64 @@ export default class  Logic {
         }
 
     }
-    get_whater(weight , activity )
+    get_whater(weight, activity) {
+        return (weight / 30) + (0.125 * activity)
+    }
+
+
+    get_cal_spit(carbs = 40, protin = 30, fat = 30, caloris) {
+
+        let cal4C = carbs / 100
+        let cak4P = protin / 100
+        let cal9 = fat / 100
+        console.log(caloris);
+
+        let split = {
+            carbs: (cal4C * caloris) / 4,
+            protin: (cak4P * caloris) / 4,
+            fat: (cal9 * caloris) / 9
+
+        }
+        console.log(split);
+
+        return split
+
+    }
+
+    get_split(cal) {
+        let nutrition = {
+            kito: this.get_cal_spit(5, 45, 50, cal),
+            low_fat: this.get_cal_spit(60, 30, 10, cal),
+            low_protin: this.get_cal_spit(60, 10, 30, cal)
+        }
+        return nutrition
+    }
+
+
+    set_diet()
     {
-    return (weight / 30 ) + (0.125 * activity )
-    }
-
-
-    get_cal_spit(carbs = 40  , protin = 30, fat  = 30 , caloris )
-    {
-
-           let cal4C= carbs /100
-           let cak4P = protin /100 
-           let cal9 = fat / 100 
-            console.log(caloris);
-            
-            let split = {
-                carbs :  (cal4C * caloris  )  /4,
-                protin : (cak4P *  caloris )  /4 ,
-                fat : (cal9 * caloris )   /9 
-
-            }
-            console.log(split );
-            
-          return   split 
 
     }
 
-    constructor(height = 0 , weight = 0 , age = 0 , sex  = "male" , activity = 1 ) {
 
-        this.height = height
-        this.weight = weight
-        this.bmi = this.get_bmi(height, weight)
-        this.bmr = this.get_bmr(height, weight, age, sex)
-        this.cal = this.get_cal(this.bmr, activity)
-        this.condition = this.get_bmi_standart(this.bmi)
-        this.recomandetCal = this.get_recomandet_dcal(weight, height, this.bmi, 24, this.cal)
-        this.water = this.get_whater(weight, activity)
-        this.split = this.get_cal_spit(40,30,30,this.recomandetCal)
-    }
+
+
+
+constructor(height = 0, weight = 0, age = 0, sex = "male", activity = 1) {
+
+    this.height = height
+    this.weight = weight
+    this.age = age
+    this.sex = sex
+    this.activity = activity
+    this.bmi = this.get_bmi(height, weight)
+    this.bmr = this.get_bmr(height, weight, age, sex)
+    this.cal = this.get_cal(this.bmr, activity)
+    this.condition = this.get_bmi_standart(this.bmi)
+    this.recomandetCal = this.get_recomandet_dcal(weight, height, this.bmi, 24, this.cal)
+    this.water = this.get_whater(weight, activity)
+    this.split = this.get_cal_spit(40, 30, 30, this.recomandetCal)
+    this.diet_spit = this.get_split(this.recomandetCal)
+}
 }
 
