@@ -31,6 +31,17 @@ export default function Bmr() {
         console.log(L);
         sethuman(L)
     }
+    let changeHumanActiviry = function (num) {
+        let h = human
+        console.log(h);
+        h.activity = parseInt(num)
+        console.log(h);
+        //let L = new Logic(human.height, human.weight, human.age, human.sex, human.activity)
+        let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity)
+        console.log(L);
+        sethuman(L)
+    }
+
     let save = function ()
     {
         localStorage.setItem("human", JSON.stringify(human))
@@ -43,6 +54,7 @@ export default function Bmr() {
             <p> recomandetCal :  {JSON.stringify(human.recomandetCal)} </p>
             <input type="number" defaultValue={human.weight} onChange={event => changeHumanWhit(event.target.value)}></input>
             <input type="number" defaultValue={human.height} onChange={event => changeHumanHight(event.target.value)}></input>
+            <input type="range"  min="1" max="5" defaultValue = {human.activity}  onChange = {event => changeHumanActiviry(event.target.value)} >  </input>
            <button onClick ={save} > save! </button>
         </div>
     );
