@@ -17,7 +17,7 @@ export default function Bmr() {
         h.weight = parseInt(num)
         console.log(h);
         //let L = new Logic(human.height, human.weight, human.age, human.sex, human.activity)
-        let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity)
+        let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity, h.split)
         console.log(L);
         sethuman(L)
     }
@@ -27,7 +27,7 @@ export default function Bmr() {
         h.height = parseInt(num)
         console.log(h);
         //let L = new Logic(human.height, human.weight, human.age, human.sex, human.activity)
-        let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity)
+        let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity, h.split)
         console.log(L);
         sethuman(L)
     }
@@ -37,7 +37,7 @@ export default function Bmr() {
         h.activity = parseInt(num)
         console.log(h);
         //let L = new Logic(human.height, human.weight, human.age, human.sex, human.activity)
-        let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity)
+        let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity, h.split)
         console.log(L);
         sethuman(L)
     }
@@ -54,7 +54,10 @@ export default function Bmr() {
             <p> recomandetCal :  {JSON.stringify(human.recomandetCal)} </p>
             <input type="number" defaultValue={human.weight} onChange={event => changeHumanWhit(event.target.value)}></input>
             <input type="number" defaultValue={human.height} onChange={event => changeHumanHight(event.target.value)}></input>
-            <input type="range"  min="1" max="5" defaultValue = {human.activity}  onChange = {event => changeHumanActiviry(event.target.value)} >  </input>
+            <p>
+                 <input type="range"  min="1" max="5" defaultValue = {human.activity}  onChange = {event => changeHumanActiviry(event.target.value)} ></input> 
+                 <p> activity :  {JSON.stringify(human.activity)} </p>
+             </p>
            <button onClick ={save} > save! </button>
         </div>
     );

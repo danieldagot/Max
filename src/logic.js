@@ -88,7 +88,7 @@ export default class Logic {
     }
 
 
-    get_cal_spit(carbs = 40, protin = 30, fat = 30, caloris) {
+    get_cal_spit(carbs, protin, fat, caloris) {
 
         let cal4C = carbs / 100
         let cak4P = protin / 100
@@ -107,40 +107,53 @@ export default class Logic {
 
     }
 
-    get_split(cal) {
+    get_split(name, cal, carbs = 40, proitin = 30 , fat = 30 ) {
+
+
         let nutrition = {
+            regular: this.get_cal_spit(40, 30, 30, cal),
             kito: this.get_cal_spit(5, 45, 50, cal),
             low_fat: this.get_cal_spit(60, 30, 10, cal),
-            low_protin: this.get_cal_spit(60, 10, 30, cal)
+            low_protin: this.get_cal_spit(60, 10, 30, cal),
         }
-        return nutrition
+        this.castom_sptit_test = {
+            carbs: carbs,
+            proitin: proitin,
+            fat: fat
+        }
+
+        if (name == "castom") {
+        this.castom_sptit = {
+            carbs: carbs,
+            proitin: proitin,
+            fat: fat
+        }
+            nutrition.castom = this.get_cal_spit(this.castom_sptit.carbs, this.castom_sptit.proitin, this.castom_sptit.fat, cal)
+
+        }
+
+        return nutrition[name]
     }
 
 
-    set_diet()
-    {
 
+
+
+    constructor(height = 0, weight = 0, age = 0, sex = "male", activity = 1, split = "regular") {
+        this.height = height
+        this.weight = weight
+        this.age = age
+        this.sex = sex
+        this.activity = activity
+        this.split = split
+        this.bmi = this.get_bmi(height, weight)
+        this.bmr = this.get_bmr(height, weight, age, sex)
+        this.cal = this.get_cal(this.bmr, activity)
+        this.condition = this.get_bmi_standart(this.bmi)
+        this.recomandetCal = this.get_recomandet_dcal(weight, height, this.bmi, 24, this.cal)
+        this.water = this.get_whater(weight, activity)
+        // this.split = this.get_cal_spit("regular", this.recomandetCal)
+        this.diet_spit = this.get_split(split, this.recomandetCal)
     }
-
-
-
-
-
-constructor(height = 0, weight = 0, age = 0, sex = "male", activity = 1) {
-
-    this.height = height
-    this.weight = weight
-    this.age = age
-    this.sex = sex
-    this.activity = activity
-    this.bmi = this.get_bmi(height, weight)
-    this.bmr = this.get_bmr(height, weight, age, sex)
-    this.cal = this.get_cal(this.bmr, activity)
-    this.condition = this.get_bmi_standart(this.bmi)
-    this.recomandetCal = this.get_recomandet_dcal(weight, height, this.bmi, 24, this.cal)
-    this.water = this.get_whater(weight, activity)
-    this.split = this.get_cal_spit(40, 30, 30, this.recomandetCal)
-    this.diet_spit = this.get_split(this.recomandetCal)
-}
 }
 

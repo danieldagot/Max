@@ -40,7 +40,7 @@ export default function Bmi() {
     h.weight = parseInt(num);
     console.log(h);
     //let L = new Logic(human.height, human.weight, human.age, human.sex, human.activity)
-    let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity);
+    let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity, h.split);
     console.log(L);
     sethuman(L);
   };
@@ -50,7 +50,8 @@ export default function Bmi() {
     h.height = parseInt(num);
     console.log(h);
     //let L = new Logic(human.height, human.weight, human.age, human.sex, human.activity)
-    let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity);
+    let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity, h.split);
+    
     console.log(L);
     sethuman(L);
   };

@@ -20,18 +20,20 @@ let human = {
   activity: 3
 }
 
-let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
+// let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
 
-localStorage.setItem("human", JSON.stringify(L))
+// localStorage.setItem("human", JSON.stringify(L))
 
 
 function App() {
-  console.log(L);
   const [ShowBmr, setShowBmr] = useState(false);
   const [ShowBmi, setShowBmi] = useState(false);
   const [ShowSplit, setShowSplit] = useState(false);
   const [human2, sethuman] = useState(JSON.parse(localStorage.getItem("human")));
+  console.log(human2);
   return (
+    
+    
     <Router>
       
       <div className="App">
@@ -41,7 +43,7 @@ function App() {
           <ButtonToolbar>
             <button onClick={() => setShowBmi(!ShowBmi)}> bmi :  {human2.bmi}  </button>
             <button onClick={() => setShowBmr(!ShowBmr)}> bmr :  {human2.bmr} clalirs a dey  </button>
-            <button onClick={() => setShowSplit(!ShowSplit)}>  {JSON.stringify(human2.split)}  </button>
+            <button onClick={() => setShowSplit(!ShowSplit)}>  {JSON.stringify(human2.diet_spit)}  </button>
             <Modal
               size="lg"
               show={ShowBmi}
