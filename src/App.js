@@ -15,7 +15,7 @@ import Requests from "./requests"
 
 
 let human = {
-  name : "byber", 
+  name: "byber",
   hight: 156,
   weight: 58,
   age: 18,
@@ -26,16 +26,16 @@ let human = {
 
 let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
 let req = new Requests()
-localStorage.setItem("human", JSON.stringify(L))
+// localStorage.setItem("human", JSON.stringify(L))
 function App() {
   req.food("egg")
   return (
     <Router>
       <div className="App">
-      <div class = "time" >TIME</div>
+        <div class="time" >TIME</div>
         {localStorage.getItem("human")}
         <Route path="/" exact render={() => <Main />} />
-        <div className = "homeButton">Home button</div>
+        <div className="homeButton">Home button</div>
       </div>
     </Router>
   );

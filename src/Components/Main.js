@@ -1,4 +1,5 @@
 import React, { Component,useState } from 'react';
+import '../App.css'; 
 import Logic from "../logic"
 import Bmi from "./popups/bmi"
 import Bmr from "./popups/bmr"
@@ -11,7 +12,7 @@ const [ShowBmi, setShowBmi] = useState(false);
 const [ShowSplit, setShowSplit] = useState(false);
 const [human2, sethuman] = useState(JSON.parse(localStorage.getItem("human")));
         return (
-            <div className=" camorshal" >
+            <div className=" q" >
             <ButtonToolbar>
               <button onClick={() => setShowBmi(!ShowBmi)}> bmi :  {human2.bmi}  </button>
               <button onClick={() => setShowBmr(!ShowBmr)}> bmr :  {human2.bmr} clalirs a dey  </button>
