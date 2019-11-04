@@ -1,24 +1,35 @@
 
 .App { 
- /* text-align: center; */
- /* height: 100vh; */
+ text-align: center;
+ height: 100vh;
  margin: 0px; 
  height: 10vh; 
  min-height: 100%; 
  } 
 
+ .topbar{ /* used for the main hamburger menu bar */
+    z-index: 1;
+    height: 8%;
+    min-height: 8%;
+    width: 100%;
+    background-color: #626567;
+    padding:2.5%;
+    top:2.5%;                                                                               /*needs to sit below the time div*/
+}
+
 .time { 
- height: 2.5%; background-color: red; 
+ height: 2.5%;
+ background-color: red; 
  top:0; 
  width: 100%; 
  } 
+
  .homeButton { 
  height: 5.5%; 
  background-color: red; 
  width: 100%; 
- margin-top: 3%; 
-
- /* position: fixed;  */
+ bottom: 0.1%; 
+ position: absolute ; 
  } 
  .camorshal { 
  height: 100%; 

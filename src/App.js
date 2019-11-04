@@ -32,7 +32,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div class="time" >TIME</div>
+        <div className="time">TIME</div>
+        <div class="topbar"> logo and hamburger go here </div>
         {localStorage.getItem("human")}
         <Route path="/" exact render={() => <Main />} />
         <div className="homeButton">Home button</div>
