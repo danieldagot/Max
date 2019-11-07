@@ -8,7 +8,6 @@ import Modal from 'react-bootstrap/Modal'
 import { ButtonToolbar, Button } from 'react-bootstrap'
 import ex from "./codebeautify.js"
 
-
 export default function Main() {
   const [ShowBmr, setShowBmr] = useState(false);
   const [ShowBmi, setShowBmi] = useState(false);

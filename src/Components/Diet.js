@@ -7,7 +7,8 @@ export default function Diet() {
         <div className='container'>
             <div>
                 diet name
+                
             </div>
        </div>
-        ) 
+        )
 }

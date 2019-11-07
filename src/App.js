@@ -21,8 +21,10 @@ let human = {
   age: 18,
   sex: "female",
   activity: 3
-
 }
+
+
+//localStorage.setItem("userWorkouts", JSON.stringify({}))
 
 let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
 let req = new Requests()
@@ -35,7 +37,7 @@ function App() {
         <div className="time">TIME</div>
         <div class="topbar"> logo and hamburger go here </div>
         {localStorage.getItem("human")}
-        <Route path="/" exact render={() => <Main />} />
+        <Route path="/" exact render={() => <Workouts />} />
         <div className="homeButton">Home button</div>
       </div>
     </Router>
