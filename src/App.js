@@ -25,7 +25,11 @@ let human = {
 
 
 //localStorage.setItem("userWorkouts", JSON.stringify({}))
-
+   let userWorkouts =  JSON.parse(localStorage.getItem("userWorkouts"))
+   if(!userWorkouts)
+        {
+                 localStorage.setItem("userWorkouts", JSON.stringify({}))
+        } 
 let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
 let req = new Requests()
 // localStorage.setItem("human", JSON.stringify(L))

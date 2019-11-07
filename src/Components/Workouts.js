@@ -12,8 +12,10 @@ export default function Workouts() {
         const [workoutName, setWortoutName] = useState();
         if(!userWorkouts)
         {
+
                 setWortouts({})
-                 localStorage.setItem("userWorkouts", JSON.stringify({}))
+                localStorage.setItem("userWorkouts", JSON.stringify({}))
+
         }
         let body = {}
         ex.map(e => body[e["body part "]] = 1)
