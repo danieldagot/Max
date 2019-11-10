@@ -10,13 +10,7 @@ export default function Workouts() {
         const [workout, setWortout] = useState([]);
         const [userWorkouts, setWortouts] = useState(JSON.parse(localStorage.getItem("userWorkouts")));
         const [workoutName, setWortoutName] = useState();
-        if(!userWorkouts)
-        {
 
-                setWortouts({})
-                localStorage.setItem("userWorkouts", JSON.stringify({}))
-
-        }
         let body = {}
         ex.map(e => body[e["body part "]] = 1)
         let e = Object.keys(body)
@@ -40,19 +34,14 @@ export default function Workouts() {
                 setSets("")
         }
         let saveWorkout = function () {
-                if(!userWorkouts)
-                {
-                        setWortouts({})
-                }
-                setWortouts(userWorkouts[workoutName] = workout )
+                setWortouts(userWorkouts[workoutName] = workout)
                 console.log(userWorkouts);
-                localStorage.setItem("userWorkouts", userWorkouts)
-                setWortout([])
+                localStorage.setItem("userWorkouts",  JSON.stringify(userWorkouts))
         }
 
         return (
                 <div className='container'>
-                        <p>                         <input type="text" placeholder="woekout name"  onChange={event => setWortoutName(event.target.value)} ></input>
+                        <p>                         <input type="text" placeholder="woekout name" onChange={event => setWortoutName(event.target.value)} ></input>
                         </p>
                         <select onChange={event => changeBodyPart(event.target.value)}  >
                                 <option value="*" ></option>
@@ -68,7 +57,7 @@ export default function Workouts() {
                         <p> <button onClick={saveWorkout}>save workout</button> </p>
                         <p>{JSON.stringify(workout)}</p>
                         <p>{JSON.stringify(userWorkouts)}</p>
-                       
+
                 </div>
         )
 }

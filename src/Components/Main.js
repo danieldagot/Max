@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState , useEffect } from 'react';
 import '../App.css';
 import Logic from "../logic"
 import Bmi from "./popups/bmi"
@@ -9,18 +9,39 @@ import { ButtonToolbar, Button } from 'react-bootstrap'
 import ex from "./codebeautify.js"
 
 export default function Main() {
+  useEffect(() => {
+    let human = {
+      name: "byber",
+      hight: 156,
+      weight: 58,
+      age: 18,
+      sex: "female",
+      activity: 3
+    }
+    console.log(human);
+    
+    let h = localStorage.getItem("human")
+    if (!h) {
+      console.log("test");
+      let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
+      localStorage.setItem("human", JSON.stringify(L))
+    }
+
+  })
   const [ShowBmr, setShowBmr] = useState(false);
   const [ShowBmi, setShowBmi] = useState(false);
   const [ShowSplit, setShowSplit] = useState(false);
   const [human2, sethuman] = useState(JSON.parse(localStorage.getItem("human")));
+  
   console.log(ex);
 
   return (
     <div className=" q" >
       <ButtonToolbar>
-        <button onClick={() => setShowBmi(!ShowBmi)}> bmi :  {human2.bmi}  </button>
+        {human2 ? <div> <button onClick={() => setShowBmi(!ShowBmi)}> bmi :  {human2.bmi}  </button>
         <button onClick={() => setShowBmr(!ShowBmr)}> bmr :  {human2.bmr} clalirs a dey  </button>
-        <button onClick={() => setShowSplit(!ShowSplit)}>  {JSON.stringify(human2.diet_spit)}  </button>
+        <button onClick={() => setShowSplit(!ShowSplit)}>  {JSON.stringify(human2.diet_spit)}  </button> </div>  : null }
+        
         <Modal
           size="lg"
           show={ShowBmi}
