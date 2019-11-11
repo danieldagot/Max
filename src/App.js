@@ -14,7 +14,7 @@ import Logic from "./logic"
 import Requests from "./requests"
 import Strength from "./Components/Strength"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import HamburgerMenuPage from "./Components/hamburgerMenuPage"
+import SideBar from "./Components/hamburgerMenuPage"
 
 //localStorage.setItem("userWorkouts", JSON.stringify({}))
 // let userWorkouts =  localStorage.getItem("userWorkouts")
@@ -46,7 +46,7 @@ function App() {
 
     let h = localStorage.getItem("human")
     console.log(h);
-    
+
     if (!h) {
       let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
       localStorage.setItem("human", JSON.stringify(L))
@@ -58,9 +58,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* <div className="time">TIME</div>
-        <div class="topbar"> logo and hamburger go here </div> */}
-        <HamburgerMenuPage />
+        <SideBar />
+        <div className="time">TIME</div>
+        <div class="topbar"> logo and hamburger go here </div>
+
         {/* {localStorage.getItem("human")} */}
         <Route path="/1" exact render={() => <Strength />} />
         <Route path="/" exact render={() => <Main />} />

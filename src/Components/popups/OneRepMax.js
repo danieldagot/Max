@@ -24,7 +24,7 @@ export default  function OneRapMax(props){
                 </Modal.Header>
                 <Modal.Body>
                     <p>
-                        <input type="number" placeholder="reps" onChange={event => props.setReps(event.target.value)}  ></input>
+                        <input type="number"  min="2" placeholder="reps" onChange={event => props.setReps(event.target.value)}  ></input>
                         <input type="number" placeholder="white" onChange={event => props.setWhite(event.target.value)}  ></input>
                         <p>
                             <select onChange={event => props.setEq(event.target.value)}>
