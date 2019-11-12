@@ -33,7 +33,7 @@ export default function Main() {
       localStorage.setItem("human", JSON.stringify(L))
     }
   })
-
+ 
   
   console.log(ex);
 
@@ -89,7 +89,7 @@ export default function Main() {
         </Modal>
 
       </ButtonGroup >
-       : null }
+       : window.location.reload() }
     </div>
     
   )
