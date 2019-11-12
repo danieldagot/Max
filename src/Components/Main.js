@@ -14,7 +14,7 @@ export default function Main() {
   const [ShowSplit, setShowSplit] = useState(false);
   const [human2, sethuman] = useState(JSON.parse(localStorage.getItem("human")));
   const [firslogon, setfirslogon] = useState(0)
-  
+
   useEffect(() => {
     let human = {
       name: "byber",
@@ -39,6 +39,7 @@ export default function Main() {
 
   return (
     <div className="Maincontiner" >
+      {human2 ? 
       <ButtonGroup >
         {human2 ? <div> <Button onClick={() => setShowBmi(!ShowBmi)}> bmi :  {human2.bmi}  </Button>
         <Button onClick={() => setShowBmr(!ShowBmr)}> bmr :  {human2.bmr} clalirs a dey  </Button>
@@ -88,6 +89,8 @@ export default function Main() {
         </Modal>
 
       </ButtonGroup >
+       : null }
     </div>
+    
   )
 }
