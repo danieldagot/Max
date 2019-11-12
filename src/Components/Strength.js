@@ -13,7 +13,7 @@ const Example = props => {
     return (
         <>
 
-            <Button variant="primary" onClick={() => setShow(true)}>
+            <Button variant="outline-light" onClick={() => setShow(true)}>
             <div  className = "dataBatten" id = "wiks">
                 wiks 
             </div>

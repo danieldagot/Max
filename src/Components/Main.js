@@ -41,9 +41,20 @@ export default function Main() {
     <div className="Maincontiner" >
       {human2 ? 
       <ButtonGroup >
-        {human2 ? <div> <Button onClick={() => setShowBmi(!ShowBmi)}> bmi :  {human2.bmi}  </Button>
-        <Button onClick={() => setShowBmr(!ShowBmr)}> bmr :  {human2.bmr} clalirs a dey  </Button>
-        <Button onClick={() => setShowSplit(!ShowSplit)}>  {JSON.stringify(human2.diet_spit)}  </Button> </div>  : null }
+        {human2 ? <div>
+           <Button variant="outline-light" onClick={() => setShowBmi(!ShowBmi)}> 
+           <div  className = "dataBatten" id = "bmi">
+           bmi :  {human2.bmi} 
+           </div>
+          </Button>
+        <Button variant="outline-light" onClick={() => setShowBmr(!ShowBmr)}> 
+        <div  className = "dataBatten" id = "bmr">
+        bmr :  {human2.bmr} clalirs a dey
+        </div>
+         </Button>
+        <Button variant="outline-light"  onClick={() => setShowSplit(!ShowSplit)}> 
+        <div  className = "dataBatten" id = "foodslit">  {JSON.stringify(human2.diet_spit)}  </div> 
+           </Button> </div>  : null }
         
         <Modal
           size="lg"
