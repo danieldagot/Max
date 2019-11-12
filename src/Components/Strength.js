@@ -10,14 +10,17 @@ const Example = props => {
     Calcs.wiks(h.sex, h.weight, 300)
     const [show, setShow] = useState(false);
     const [total, settotal] = useState(100);
+    let wiks = Calcs.wiks(h.sex, h.weight, total)
     return (
         <>
 
             <Button variant="outline-light" onClick={() => setShow(true)}>
-            <div  className = "dataBatten" id = "wiks">
-                wiks 
-            </div>
-             </Button>
+                <div className="dataBatten" id="wiks">
+                    wiks
+                                <p> score :{JSON.stringify(Math.round(wiks.score))}</p>
+                    <p> level :{JSON.stringify(wiks.leval)}</p>
+                </div>
+            </Button>
 
             <Modal
                 show={show}
