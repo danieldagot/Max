@@ -9,12 +9,12 @@ export default props => {
         Home
       </a>
 
-      <a className="menu-item" href="/1">
-        strbgth
+      <a className="menu-item" href="/Strength">
+      Strength
       </a>
 
-      <a className="menu-item" href="/pizzas">
-        Pizzas
+      <a className="menu-item" href="/Workouts">
+      Workouts
       </a>
 
       <a className="menu-item" href="/desserts">

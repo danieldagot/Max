@@ -7,9 +7,14 @@ export default  function OneRapMax(props){
     const [show, setShow] = useState(false);
     const [white, setWhite] = useState(10);
     return (
-        <>
-            <Button variant="primary" onClick={() => setShow(true)}>
-            One rep max: {props.oneRepM? props.oneRepM : null }        </Button>
+       <>
+
+            <Button variant="outline-light" onClick={() => setShow(true)}>
+                 <div  className = "dataBatten" id = "oneRepMax">
+
+                 One rep max: {props.oneRepM? props.oneRepM : null }   
+                 </div>
+             </Button>
 
             <Modal
                 show={show}
@@ -34,7 +39,7 @@ export default  function OneRapMax(props){
                     </p>
                 </Modal.Body>
             </Modal>
-        </>
+           </>
     );
 }
 

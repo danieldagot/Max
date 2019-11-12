@@ -5,7 +5,7 @@ import Bmi from "./popups/bmi"
 import Bmr from "./popups/bmr"
 import Split from "./popups/split"
 import Modal from 'react-bootstrap/Modal'
-import { ButtonToolbar, Button } from 'react-bootstrap'
+import { ButtonToolbar, Button ,ButtonGroup } from 'react-bootstrap'
 import ex from "./codebeautify.js"
 
 export default function Main() {
@@ -36,11 +36,11 @@ export default function Main() {
   console.log(ex);
 
   return (
-    <div className=" q" >
-      <ButtonToolbar>
-        {human2 ? <div> <button onClick={() => setShowBmi(!ShowBmi)}> bmi :  {human2.bmi}  </button>
-        <button onClick={() => setShowBmr(!ShowBmr)}> bmr :  {human2.bmr} clalirs a dey  </button>
-        <button onClick={() => setShowSplit(!ShowSplit)}>  {JSON.stringify(human2.diet_spit)}  </button> </div>  : null }
+    <div className="Maincontiner" >
+      <ButtonGroup >
+        {human2 ? <div> <Button onClick={() => setShowBmi(!ShowBmi)}> bmi :  {human2.bmi}  </Button>
+        <Button onClick={() => setShowBmr(!ShowBmr)}> bmr :  {human2.bmr} clalirs a dey  </Button>
+        <Button onClick={() => setShowSplit(!ShowSplit)}>  {JSON.stringify(human2.diet_spit)}  </Button> </div>  : null }
         
         <Modal
           size="lg"
@@ -85,7 +85,7 @@ export default function Main() {
           <Modal.Body> <Split /> </Modal.Body>
         </Modal>
 
-      </ButtonToolbar>
+      </ButtonGroup >
     </div>
   )
 }

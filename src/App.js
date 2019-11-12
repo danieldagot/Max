@@ -7,9 +7,6 @@ import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom
 import Workouts from "./Components/Workouts"
 import Diet from "./Components/Diet"
 import Main from "./Components/Main"
-import Bmi from "./Components/popups/bmi"
-import Bmr from "./Components/popups/bmr"
-import Split from "./Components/popups/split"
 import Logic from "./logic"
 import Requests from "./requests"
 import Strength from "./Components/Strength"
@@ -63,8 +60,9 @@ function App() {
         <div class="topbar"> logo and hamburger go here </div>
 
         {/* {localStorage.getItem("human")} */}
-        <Route path="/1" exact render={() => <Strength />} />
+        <Route path="/Strength" exact render={() => <Strength />} />
         <Route path="/" exact render={() => <Main />} />
+        <Route path="/Workouts" exact render={() => <Workouts />} />
         <div className="homeButton">Home button</div>
       </div>
     </Router>

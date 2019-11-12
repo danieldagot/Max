@@ -34,6 +34,7 @@ export default function Workouts() {
                 setSets("")
         }
         let saveWorkout = function () {
+                
                 setWortouts(userWorkouts[workoutName] = workout)
                 console.log(userWorkouts);
                 localStorage.setItem("userWorkouts",  JSON.stringify(userWorkouts))

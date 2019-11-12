@@ -9,10 +9,15 @@ const Example = props => {
     let h = JSON.parse(localStorage.getItem("human"))
     Calcs.wiks(h.sex, h.weight, 300)
     const [show, setShow] = useState(false);
+    const [total, settotal] = useState(100);
     return (
         <>
+
             <Button variant="primary" onClick={() => setShow(true)}>
-                wiks  </Button>
+            <div  className = "dataBatten" id = "wiks">
+                wiks 
+            </div>
+             </Button>
 
             <Modal
                 show={show}
@@ -28,11 +33,13 @@ const Example = props => {
                 <Modal.Body>
                     <p>
                         <p>
-                            <input type="number" placeholder="reps"   ></input>
-                            <input type="number" placeholder="total banch + scqwt + deadlift"  ></input>
-                            
+
+
+                            <input type="number" placeholder="total banch + scqwt + deadlift" onChange={event => settotal(event.target.value)}  ></input>
+                            {/* <input type="number" placeholder="total banch + scqwt + deadlift"  ></input> */}
+
                             <p>
-                                {JSON.stringify(Calcs.wiks(h.sex, h.weight, 300))}
+                                {JSON.stringify(Calcs.wiks(h.sex, h.weight, total))}
                             </p>
                         </p>
                     </p>
