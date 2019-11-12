@@ -9,6 +9,12 @@ import { ButtonToolbar, Button ,ButtonGroup } from 'react-bootstrap'
 import ex from "./codebeautify.js"
 
 export default function Main() {
+  const [ShowBmr, setShowBmr] = useState(false);
+  const [ShowBmi, setShowBmi] = useState(false);
+  const [ShowSplit, setShowSplit] = useState(false);
+  const [human2, sethuman] = useState(JSON.parse(localStorage.getItem("human")));
+  const [firslogon, setfirslogon] = useState(0)
+  
   useEffect(() => {
     let human = {
       name: "byber",
@@ -26,12 +32,8 @@ export default function Main() {
       let L = new Logic(human.hight, human.weight, human.age, human.sex, human.activity)
       localStorage.setItem("human", JSON.stringify(L))
     }
-
   })
-  const [ShowBmr, setShowBmr] = useState(false);
-  const [ShowBmi, setShowBmi] = useState(false);
-  const [ShowSplit, setShowSplit] = useState(false);
-  const [human2, sethuman] = useState(JSON.parse(localStorage.getItem("human")));
+
   
   console.log(ex);
 
