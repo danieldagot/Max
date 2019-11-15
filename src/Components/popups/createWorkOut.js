@@ -3,7 +3,7 @@ import ex from "../codebeautify.js"
 import Modal from 'react-bootstrap/Modal'
 import { ButtonToolbar, Button } from 'react-bootstrap'
 
-export default function CreateWorkOut() {
+export default function CreateWorkOut(props) {
     //localStorage.setItem("userWorkouts", JSON.stringify({}))
     const [choce, setChoce] = useState("*");
     const [input, setInput] = useState("");

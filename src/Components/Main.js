@@ -49,7 +49,7 @@ export default function Main() {
           </Button>
         <Button variant="outline-light" onClick={() => setShowBmr(!ShowBmr)}> 
         <div  className = "dataBatten" id = "bmr">
-        bmr :  {human2.bmr} clalirs a dey
+        bmr :  {human2.cal} clalirs a dey
         </div>
          </Button>
         <Button variant="outline-light"  onClick={() => setShowSplit(!ShowSplit)}> 
