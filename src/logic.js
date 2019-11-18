@@ -33,7 +33,7 @@ export default class Logic {
             return Math.round(cal)
         }
         if (activity == 4) {
-            const cal = bmr * 1.1725
+            const cal = bmr * 1.725
             return Math.round(cal)
         }
         if (activity == 5) {
@@ -83,6 +83,7 @@ export default class Logic {
         }
 
     }
+    
     get_whater(weight, activity) {
         return (weight / 30) + (0.125 * activity)
     }

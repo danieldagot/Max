@@ -37,11 +37,17 @@ export default function CreateWorkOut(props) {
         setSets("")
     }
     let saveWorkout = function () {
-        let w = JSON.parse(localStorage.getItem("userWorkouts"))
-        setWortouts(userWorkouts[workoutName] = workout)
-        w[workoutName] = workout
-        console.log(userWorkouts);
-        localStorage.setItem("userWorkouts", JSON.stringify(w))
+        // let w = JSON.parse(localStorage.getItem("userWorkouts"))
+        // setWortouts(userWorkouts[workoutName] = workout)
+        // w[workoutName] = workout
+        // console.log(userWorkouts);
+        // localStorage.setItem("userWorkouts", JSON.stringify(w))
+        console.log(props);
+        let work = {}
+        work.name = workoutName 
+        work.exsrises =  workout 
+        props.save(work)
+        
     }
 
     return (
