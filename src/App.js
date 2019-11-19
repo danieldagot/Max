@@ -67,7 +67,7 @@ function App() {
         <Route path="/Strength" exact render={() => <Strength />} />
         <Route path="/" exact render={() => <Main />} />
         <Route path="/Workouts" exact render={() => <Workouts />} />
-        <div className="homeButton">Home button</div>
+        {/* <div className="homeButton">Home button</div> */}
       </div>
       <button onClick={lc} >localStorage.clear </button>
     </Router>
