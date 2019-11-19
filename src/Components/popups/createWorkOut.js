@@ -2,8 +2,25 @@ import React, { Component, useState, useEffect } from 'react';
 import ex from "../codebeautify.js"
 import Modal from 'react-bootstrap/Modal'
 import { ButtonToolbar, Button } from 'react-bootstrap'
+import AddIcon from '@material-ui/icons/Add';
+import { makeStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+
+const useStyles = makeStyles(theme => ({
+    // fab: {
+    //     position: 'absolute',
+    //     bottom: theme.spacing(2),
+    //     right: theme.spacing(2),
+    
+    // },
+    extendedIcon: {
+      marginRight: theme.spacing(1),
+    },
+  }));
+
 
 export default function CreateWorkOut(props) {
+    const classes = useStyles();
     //localStorage.setItem("userWorkouts", JSON.stringify({}))
     const [choce, setChoce] = useState("*");
     const [input, setInput] = useState("");
@@ -53,9 +70,11 @@ export default function CreateWorkOut(props) {
     return (
         <div className='container'>
             <Button variant="outline-light" onClick={() => setShow(true)}>
-                <div className="dataBatten" id="oneRepMax">
-                    Create workout
-                 </div>
+                <div2 id = "addWorkOutPlace">
+            <Fab color="primary" aria-label="add" className={classes.fab}>
+                                <AddIcon />
+                        </Fab>
+                        </div2>
             </Button>
             <Modal
                 show={show}
@@ -69,7 +88,7 @@ export default function CreateWorkOut(props) {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div id = "addWorkOut" >
+                    <div id = "addWorkOutBody" >
                         <p>
                             <input type="text" placeholder="workout name" onChange={event => setWortoutName(event.target.value)} ></input>
                         </p>
