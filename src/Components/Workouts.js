@@ -23,7 +23,7 @@ function ControlledTabs(props) {
                         <Tab eventKey="contact" title="Contact" >
 
                         </Tab>
-                        {w.workouts.map(l => <Tab eventKey={l.name} title={l.name}  > {JSON.stringify(l)} </Tab>)}
+                         {  w.workouts ? w.workouts.map(l => <Tab eventKey={l.name} title={l.name}  > {JSON.stringify(l)} </Tab>) : null}
                         
                 </Tabs>
         );

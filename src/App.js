@@ -23,8 +23,12 @@ import SideBar from "./Components/hamburgerMenuPage"
 // let req = new Requests()
 // localStorage.setItem("human", JSON.stringify(L))
 
-
+let lc = function()
+   {
+     localStorage.clear()
+   }
 function App() {
+   
   useEffect(() => {
     var human = {
       name: "byber",
@@ -65,7 +69,7 @@ function App() {
         <Route path="/Workouts" exact render={() => <Workouts />} />
         <div className="homeButton">Home button</div>
       </div>
-      <button onClick={localStorage.clear} >localStorage.clear </button>
+      <button onClick={lc} >localStorage.clear </button>
     </Router>
   );
 }
