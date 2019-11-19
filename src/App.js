@@ -60,7 +60,7 @@ function App() {
     <Router>
       <div className="App">
         <SideBar />
-        <div className="time">TIME</div>
+        {/* <div className="time">TIME</div> */}
         <div class="topbar"> logo and hamburger go here </div>
 
         {/* {localStorage.getItem("human")} */}
