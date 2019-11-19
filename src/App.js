@@ -65,6 +65,7 @@ function App() {
         <Route path="/Workouts" exact render={() => <Workouts />} />
         <div className="homeButton">Home button</div>
       </div>
+      <button onClick={localStorage.clear} >localStorage.clear </button>
     </Router>
   );
 }
