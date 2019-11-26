@@ -10,8 +10,8 @@ export default  function OneRapMax(props){
        <>
 
             <Button variant="outline-light" onClick={() => setShow(true)}>
+               
                  <div  className = "dataBatten" id = "oneRepMax">
-
                  One rep max: {props.oneRepM? props.oneRepM : null }   
                  </div>
              </Button>

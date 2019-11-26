@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Logic from "../../logic"
+
 export default function Split() {
 
     const [human, sethuman] = useState(JSON.parse(localStorage.getItem("human")));
@@ -51,7 +52,7 @@ export default function Split() {
     return (
         <div>
             
-            <p> split :  {JSON.stringify(human.diet_spit)} </p>
+            <p> split :  {JSON.stringify(human.diet_spit)}</p>
             <p>
                 <select defaultValue= {human.split}  onChange={event => changeHumanSplit(event.target.value)} >
                 <option value="regular">regular</option>

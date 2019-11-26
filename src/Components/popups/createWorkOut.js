@@ -42,7 +42,8 @@ export default function CreateWorkOut(props) {
     }
     let addExsarsise = function () {
         let exsrise = {
-            name: choce,
+            bodyPart : choce ,
+            name: input,
             sets: sets,
             reps: reps
         }
