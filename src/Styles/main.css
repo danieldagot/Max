@@ -1,0 +1,31 @@
+#bmi {
+  background-image: url("https://i2s3e2c6.stackpathcdn.com/wp-content/uploads/2019/06/BMI-Product-image-2-1.jpg");
+}
+#bmr {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQBTxfieJQMnFKk6ObSqrg_fuoRrXJll_LIttxR7X3E4AemvYNZ");
+}
+.MainContiner {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: green;
+  height: 100vh;
+}
+.dataBatten {
+  /* justify-content: center;
+        justify-items: center; */
+  margin-left: 25%;
+  width: 60%;
+}
+#foodslit {
+  display: grid;
+  grid-template-columns:   auto auto;
+  justify-items: center;
+}
+#foodslit div {
+  border-style: solid;
+  border-width: medium;
+  justify-content: center;
+  justify-items: center;
+}

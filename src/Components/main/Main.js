@@ -1,8 +1,8 @@
 import React, { Component, useState, useEffect } from "react";
 import Logic from "../../logic";
-import Bmi from "../popups/bmi";
-import Bmr from "../popups/bmr";
-import Split from "../popups/split";
+import Bmi from "./popups/bmi";
+import Bmr from "./popups/bmr";
+import Split from "./popups/split";
 import Modal from "react-bootstrap/Modal";
 import { ButtonToolbar, Button, ButtonGroup } from "react-bootstrap";
 import ex from "../codebeautify.js";
@@ -11,13 +11,9 @@ import { PieChart, Pie, Sector, Cell } from "recharts";
 
 import "../../Styles/main.css";
 
-import Example from "./splitShart"
-
+import Example from "./splitShart";
 
 export default function Main() {
-  const [ShowBmr, setShowBmr] = useState(false);
-  const [ShowBmi, setShowBmi] = useState(false);
-  const [ShowSplit, setShowSplit] = useState(false);
   const [human2, sethuman] = useState(
     JSON.parse(localStorage.getItem("human"))
   );
@@ -51,86 +47,11 @@ export default function Main() {
   console.log(ex);
 
   return (
-    <div className="Maincontiner">
-      {human2 ? (
-        <ButtonGroup>
-          {human2 ? (
-            <div>
-              <Button
-                variant="outline-light"
-                onClick={() => setShowBmi(!ShowBmi)}
-              >
-                <div className="dataBatten" id="bmi">
-                  bmi : {human2.bmi}
-                </div>
-              </Button>
-              <Button
-                variant="outline-light"
-                onClick={() => setShowBmr(!ShowBmr)}
-              >
-                <div className="dataBatten" id="bmr">
-                  bmr : {human2.cal} clalirs a dey
-                </div>
-              </Button>
-              <Button
-                variant="outline-light"
-                onClick={() => setShowSplit(!ShowSplit)}
-              >
-                <div className="dataBatten" id="foodslit">
-                  <Example />
-                  ;{" "}
-                </div>
-              </Button>{" "}
-            </div>
-          ) : null}
-
-          <Modal
-            size="lg"
-            show={ShowBmi}
-            onHide={() => setShowBmi(false)}
-            aria-labelledby="example-modal-sizes-title-lg"
-          >
-            <Modal.Header closeButton>
-              <Modal.Title id="example-modal-sizes-title-lg">Bmi</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              {" "}
-              <Bmi />{" "}
-            </Modal.Body>
-          </Modal>
-
-          <Modal
-            size="lg"
-            show={ShowBmr}
-            onHide={() => setShowBmr(false)}
-            aria-labelledby="example-modal-sizes-title-lg"
-          >
-            <Modal.Header closeButton>
-              <Modal.Title id="example-modal-sizes-title-lg">Bmr</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              {" "}
-              <Bmr />{" "}
-            </Modal.Body>
-          </Modal>
-
-          <Modal
-            size="lg"
-            show={ShowSplit}
-            onHide={() => setShowSplit(false)}
-            aria-labelledby="example-modal-sizes-title-lg"
-          >
-            <Modal.Header closeButton>
-              <Modal.Title id="example-modal-sizes-title-lg">Bmi</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              {" "}
-              <Split />{" "}
-            </Modal.Body>
-          </Modal>
-        </ButtonGroup>
-      ) : (
-        window.location.reload()
+    <div className="MainContiner">
+      {JSON.stringify(human2)}
+      <Bmr human = {human2} />
+      <Bmi human = {human2} />
+      <Split human = {human2} />
       )}
     </div>
   );

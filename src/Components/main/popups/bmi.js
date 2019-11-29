@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Logic from "../../logic";
-
+import Logic from "../../../logic";
+import Modal from "react-bootstrap/Modal";
+import { ButtonToolbar, Button } from "react-bootstrap";
 // export default class Bmi extends Component {
 //     constructor() {
 //         super()
@@ -18,7 +19,7 @@ import Logic from "../../logic";
 //          ) }
 //  }
 
-export default function Bmi() {
+function BmiI() {
   let defs = {
     Overweight:
       "Overweight is defined as a BMI of 25 or more, thus it includes pre-obesity defined as a BMI between 25 and 30 and obesity as defined by a BMI of 30 or more. Pre-obese and overweight however are often used interchangeably, thus giving overweight a common definition of a BMI of between 25–30",
@@ -51,7 +52,7 @@ export default function Bmi() {
     console.log(h);
     //let L = new Logic(human.height, human.weight, human.age, human.sex, human.activity)
     let L = new Logic(h.height, h.weight, h.age, h.sex, h.activity, h.split);
-    
+
     console.log(L);
     sethuman(L);
   };
@@ -76,5 +77,32 @@ export default function Bmi() {
       />
       <button onClick={save}> save! </button>
     </div>
+  );
+}
+
+export default function Bmi() {
+  const [show, setShow] = useState(false);
+  const [ShowBmi, setShowBmi] = useState(false);
+  return (
+    <>
+      <Button variant="outline-light" onClick={() => setShowBmi(!ShowBmi)}>
+        <div className="dataBatten" id="bmi">
+          bmi
+        </div>
+      </Button>
+      <Modal
+        size="lg"
+        show={ShowBmi}
+        onHide={() => setShowBmi(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">Bmi</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <BmiI />
+        </Modal.Body>
+      </Modal>
+    </>
   );
 }
