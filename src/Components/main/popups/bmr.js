@@ -84,7 +84,7 @@ export default function Bmr(props) {
     <>
       <Button variant="outline-light" onClick={() => setShowBmr(!ShowBmr)}>
         <div className="dataBatten" id="bmr">
-          bmr :  {JSON.stringify(props.human.cal)} clalirs a dey
+          bmr :  { props.human ? JSON.stringify(props.human.cal) : null} clalirs a dey
         </div>
       </Button>
 

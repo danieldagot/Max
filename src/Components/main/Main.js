@@ -45,13 +45,15 @@ export default function Main() {
   });
 
   console.log(ex);
-
+  let save = function(data) {
+    
+  };
   return (
     <div className="MainContiner">
       {JSON.stringify(human2)}
-      <Bmr human = {human2} />
-      <Bmi human = {human2} />
-      <Split human = {human2} />
+      <Bmr human={human2} />
+      <Bmi human={human2} />
+      <Split human={human2} />
       )}
     </div>
   );

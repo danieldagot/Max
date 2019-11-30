@@ -69,7 +69,6 @@ export default class Logic {
         let gcal = 7700 * target
         console.log(gcal);
         let tcg = gcal / time
-
         if (22 - bmi >= 0) {
             let r = cal + (tcg / 7)
             console.log(r);

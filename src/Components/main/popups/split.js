@@ -93,7 +93,7 @@ const [human, sethuman] = useState(JSON.parse(localStorage.getItem("human")));
       <Button variant="outline-light" onClick={() => setShowSplit(!ShowSplit)}>
         <div className="dataBatten" id="foodslit">
          <div>  <Example /></div>
-         <div> {JSON.stringify(props.human.diet_spit)}</div>
+         <div> { props.human ? JSON.stringify(props.human.diet_spit) : null}</div>
         </div>
       </Button>
       <Modal
