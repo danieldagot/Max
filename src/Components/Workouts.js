@@ -7,7 +7,7 @@ import Tabs from 'react-bootstrap/Tabs'
 import { type } from 'os';
 
 
-
+import "../Styles/workOuts.css"
 
 function ControlledTabs(props) {
         const [key, setKey] = useState('home');
@@ -16,19 +16,9 @@ function ControlledTabs(props) {
         return (
                 <>
                         <Tabs id="controlled-tab-example" activeKey={key} onSelect={k => setKey(k)}>
-                                <Tab eventKey="home" title="Home">
-                                        test
-                        </Tab>
-                                <Tab eventKey="profile" title="Profile">
-                                        אקדא
-                        </Tab>
-                                <Tab eventKey="contact" title="Contact" >
-
-                                </Tab>
-                                {w.workouts ? w.workouts.map(l => <Tab eventKey={l.name} title={l.name}  > {JSON.stringify(l)} </Tab>) : null}
-
+                                {w.workouts ? w.workouts.map(l => <Tab eventKey={l.name} title={l.name}  >{w.workouts ? <Workout Workout={l} /> : null}</Tab>) : null}
                         </Tabs>
-                        {w.workouts ? <Workout Workout={w.workouts[0]} /> : null}
+                        
                 </>
 
         );
