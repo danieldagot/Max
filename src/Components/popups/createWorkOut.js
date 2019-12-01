@@ -19,13 +19,32 @@ const useStyles = makeStyles(theme => ({
   }));
 
 
+  function Workout(props) {
+    return (
+      <div>
+        <div className="exsirsice">
+          {props.Workout
+            ? props.Workout.exsrises.map(e => (
+                  <div class="parent">
+                  <div class="div1">  body part : {e.bodyPart} </div>
+                  <div class="div3"> sets : {e.sets} </div>
+                  <div class="div4"> reps : {e.reps}  </div>
+                  <div class="div2">{e.name} </div>
+                  </div>
+              ))
+            : null}
+        </div>
+      </div>
+    );
+  }
+
 export default function CreateWorkOut(props) {
     const classes = useStyles();
     //localStorage.setItem("userWorkouts", JSON.stringify({}))
     const [choce, setChoce] = useState("*");
     const [input, setInput] = useState("");
     const [sets, setSets] = useState(null);
-    const [reps, setReps] = useState(null);
+    const [reps,  setReps] = useState(null);
     const [workout, setWortout] = useState([]);
     const [userWorkouts, setWortouts] = useState(JSON.parse(localStorage.getItem("userWorkouts")));
     const [workoutName, setWortoutName] = useState();
@@ -105,8 +124,6 @@ export default function CreateWorkOut(props) {
                         <input type="number" placeholder="reps" value={reps} onChange={event => setReps(event.target.value)}  ></input>
                         <button onClick={addExsarsise}>+</button>
                         <p> <button onClick={saveWorkout}>save workout</button> </p>
-                        <p>{JSON.stringify(workout)}</p>
-                        <p>{JSON.stringify(userWorkouts)}</p>
                     </div>
 
                 </Modal.Body>

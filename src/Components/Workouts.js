@@ -11,7 +11,6 @@ import "../Styles/workOuts.css";
 function ControlledTabs(props) {
   const [key, setKey] = useState("home");
   let w = props.Workouts;
-
   return (
     <>
       <Tabs
