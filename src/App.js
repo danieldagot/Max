@@ -65,6 +65,7 @@ function App() {
 
   // req.food("egg")
   return (
+    <>
     <Router>
       <div className="App">
         <SideBar />
@@ -76,8 +77,10 @@ function App() {
         <Route path="/Workouts" exact render={() => <Workouts />} />
         {/* <div className="homeButton">Home button</div> */}
       </div>
-      <button onClick={lc}>localStorage.clear </button>
+      
     </Router>
+    <button  onClick={lc}>localStorage.clear </button>
+    </>
   );
 }
 export default App;
